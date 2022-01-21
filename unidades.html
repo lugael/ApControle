@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Unidades</title>
+    <link rel="stylesheet" href="./style.css">
+  	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  	<script src="js/unidade.js"></script>
+  </head>
+
+  <body>
+    <header id="barra_menu">
+      <a id="logo" href="">img</a>
+      <nav id="nav_menu">
+        <ul id="menu_nav" role="menu">
+          <li><a href="./inicio.html">Início</a></li>
+          <li><a href="./inquilino.html">Inquilinos</a></li>
+          <li><a href="./unidades.html">Unidades</a></li>
+          <li><a href="./despesa.html">Despesa das Unidades</a></li>
+        </ul>
+      </nav>
+    </header>
+  	<div class="container">
+  					<h1 id="ini_inquilino">Unidades</h1>
+          <table class="row" id="row">
+            <tr>
+              <button id="adiciona_unidade" onclick="abre_modal('I', 'modal-adc')" class="botaoadicionar">ADICIONAR UNIDADE</button>
+            </tr>
+
+          </table>
+          <table id="Valores">
+            <thead>
+              <th id="cabecario">ID</th>
+              <th id="cabecario">Proprietário</th>
+              <th id="cabecario">Condomínio</th>
+              <th id="cabecario">Endereço</th>
+              <th id="cabecario">Despesa</th>
+  						<th id="cabecario">Edita</th>
+              <th id="cabecario">Remove</th>
+            </thead>
+          <tbody id="conteudo_unid" class="colunas"></tbody>
+          </table>
+      </div>
+      <div id="modal-adc" class="modal-container">
+          <div class="modal">
+            <h3 id="titulomd" class="titulomd"> Adicionar nova unidade</h3>
+            <form id="adic_unid"  method="POST">
+              <div id="modal-grid">
+                <table>
+                  <tr>
+                    <td>
+                      <label for="proprietariounid" id="labeltd">Proprietário</label>
+                      <input type="text" id="proprietariounid" name="proprietariounid">
+                    </td>
+                    <td id="formtd">
+                      <label for="condominiounid" id="labeltd">Condomínio</label>
+                      <select id="condominiounid" name="condominiounid">
+                        <option value="1">1 </option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    </td>
+										<td>
+											<label for="enderecounid" id="labeltd">Endereço</label>
+											<input type="text" id="enderecounid" name="enderecounid" >
+										</td>
+                  </tr>
+                </table>
+              </div>
+            </form>
+            <button class="fechar" onclick="fecha_modal('modal-adc')">FECHAR</button>
+            <button type="button" class="salvar" id="salvar" onclick="salvarf()">SALVAR UNIDADE</button>
+
+        </div>
+      </div>
+      <div id="modal-edi" class="modal-container">
+
+        <div class="modal">
+          <h3 id="titulomd" class="titulomd"> Editar unidade</h3>
+          <form id="edi_unidade"  method="POST">
+            <div id="modal-grid">
+							<table>
+								<tr>
+									<td>
+										<label for="edi_proprietariounid" id="labeltd">Proprietário</label>
+										<input type="text" id="edi_proprietariounid" name="edi_proprietariounid">
+									</td>
+									<td id="formtd">
+										<label for="edi_condominiounid" id="labeltd">Condomínio</label>
+										<select id="edi_condominiounid" name="edi_condominiounid">
+											<option value="1">1 </option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
+									</td>
+									<td>
+										<label for="edi_enderecounid" id="labeltd">Endereço</label>
+										<input type="text" id="edi_enderecounid" name="edi_enderecounid" >
+									</td>
+								</tr>
+							</table>
+            </div>
+          </form>
+          <button class="fechar" onclick="fecha_modal('modal-edi')">FECHAR</button>
+          <button type="button" class="salvar" id="salvar" onclick="salvaredicao()">CONCLUIDO</button>
+
+      </div>
+    </div>
+
+
+  </body>
+
+  <input type="hidden" name="aux_op" id="aux_op" value="I">
+  <input type="hidden" name="id" id="id" >
+
+</html>

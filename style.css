@@ -5,7 +5,7 @@ ul {
 }
 
 a {
-  color: black;
+  color: orange;
   text-decoration: none;
   font-family: sans-serif;
 }
@@ -163,7 +163,8 @@ a:hover{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #e7e7e7;
+  background: black ;
+  color: white;
 }
 
 #menu_nav {
