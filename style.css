@@ -14,6 +14,7 @@ a {
 	background-color: #ff940e;
 	padding: 5px;
 	border: 2px solid black;
+  height: 100vh;
 }
 .container div{
 	background: white;
@@ -27,6 +28,8 @@ a:hover{
 
 
 .botaoadicionar{
+  position: inherit;
+  right: 461px;
 	margin: 5px;
 	width: 170px;
 	height: 30px;
@@ -62,7 +65,20 @@ a:hover{
   position: relative;
   text-align: -webkit-center;
 }
-
+.modal-despesa{
+width: 100vw;
+height: 100vh;
+background-color: rgba(0,0,0,.8);
+position: fixed;
+top: 0px;
+left: 0px;
+z-index: 2000;
+display: none;
+justify-content: center;
+}
+.modal-despesa.mostrar{
+    display: flex;
+}
 @keyframes modal {
   from{
     opacity: 0;
@@ -96,6 +112,32 @@ a:hover{
   position: absolute;
   bottom: 10px;
   right: 50px;
+  width: 150px;
+  height: 30px;
+  border: 4px solid #ff940e;
+  background-color: #ff940e;
+  color: white;
+  font-family: "Lato";
+  cursor: pointer;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.fechar-despesa{
+  position: absolute;
+  bottom: 10px;
+  right: 250px;
+  width: 70px;
+  height: 30px;
+  border: 4px solid #ff940e;
+  background-color: #ff940e;
+  color: white;
+  font-family: "Lato";
+  cursor: pointer;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.salvar-despesa{
+  position: absolute;
+  bottom: 15px;
+  right: 100px;
   width: 150px;
   height: 30px;
   border: 4px solid #ff940e;
@@ -208,4 +250,7 @@ a:hover{
 #cabecario{
   border: 0.5px solid black;
   font-family: "Lato";
+}
+#logo{
+  width: 60px;
 }
