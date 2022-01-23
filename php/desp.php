@@ -5,6 +5,7 @@ $password = "";
 $dbname = "apcontrole";
 $aux_op = (isset($_POST['aux_op']) ? $_POST['aux_op'] : '' );
 $id = (isset($_POST['id']) ? $_POST['id'] : '' );
+$propi_unid = (isset($_POST['propi_unid']) ? $_POST['propi_unid'] : '');
 $descricao_desp = (isset($_POST['descricao_desp']) ? $_POST['descricao_desp'] : '' );
 $tipo_desp = (isset($_POST['tipo_desp']) ? $_POST['tipo_desp'] : '' );
 $vencimento_desp = (isset($_POST['vencimento_desp']) ? $_POST['vencimento_desp'] : '');
@@ -22,8 +23,9 @@ if ($conn->connect_error) {
 switch ($aux_op) {
   case 'I':
       $sql = "INSERT INTO despesa (
-                  descricao_desp, tipo_desp, vencimento_desp, valor_desp,status_desp )
+                  propi_unid, descricao_desp, tipo_desp, vencimento_desp, valor_desp,status_desp )
                   VALUES(
+                    '{$propi_unid}',
                     '{$descricao_desp}',
                     '{$tipo_desp}',
 										'{$vencimento_desp}',
@@ -40,7 +42,8 @@ switch ($aux_op) {
       }
   break;
   case 'A':
-    $sql="UPDATE despesa Set descricao_desp = '$descricao_desp',
+    $sql="UPDATE despesa Set propi_unid = '$propi_unid',
+            descricao_desp = '$descricao_desp',
             tipo_desp = '$tipo_desp',
 						vencimento_desp = '$vencimento_desp',
 						valor_desp = '$valor_desp',
@@ -66,7 +69,8 @@ switch ($aux_op) {
 
     $dados = [];
 
-    $sql = "SELECT descricao_desp,
+    $sql = "SELECT propi_unid,
+                   descricao_desp,
                    tipo_desp,
 									 vencimento_desp,
 									 valor_desp,
@@ -78,6 +82,7 @@ switch ($aux_op) {
 
     if(!empty($query)) {
       while ($row_desp = mysqli_fetch_assoc($query)) {
+        $dados['propi_unid'] = $row_desp['propi_unid'];
         $dados['descricao_desp'] = $row_desp['descricao_desp'];
         $dados['tipo_desp'] = $row_desp['tipo_desp'];
 				$dados['vencimento_desp'] = $row_desp['vencimento_desp'];

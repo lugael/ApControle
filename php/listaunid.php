@@ -20,7 +20,6 @@ if(($lista_unid) and ($lista_unid->num_rows != 0)){
 		$html .= '<td>' . $row_unid['proprietario_unid'] . '</td>';
 		$html .= '<td>' . $row_unid['condominio_unid'] . '</td>';
 		$html .= '<td>' . $row_unid['endereco_unid'] . '</td>';
-		$html .= '<td><button id="'.$row_unid['id'].'" onclick="abre_desp(\'A\','.$row_unid['id'].')">Despesas</button></td>';
 		$html .= '<td><button id="'.$row_unid['id'].'" onclick="abre_unid(\'A\','.$row_unid['id'].')">Editar</button></td>';
 		$html .= '<td><button id="'.$row_unid['id'].'" onclick="remover_unid(\'E\','.$row_unid['id'].')">Remover</button></td>';
 		$html .= '</tr>';

@@ -22,7 +22,7 @@
       </nav>
     </header>
   	<div class="container">
-  					<h1 id="ini_inquilino">Unidades</h1>
+  					<h1 id="ini_inquilino">UNIDADES</h1>
           <table class="row" id="row">
             <tr>
               <button id="adiciona_unidade" onclick="abre_modal('I', 'modal-adc')" class="botaoadicionar">ADICIONAR UNIDADE</button>
@@ -35,7 +35,6 @@
               <th id="cabecario">Proprietário</th>
               <th id="cabecario">Condomínio</th>
               <th id="cabecario">Endereço</th>
-              <th id="cabecario">Despesa</th>
   						<th id="cabecario">Edita</th>
               <th id="cabecario">Remove</th>
             </thead>
@@ -107,128 +106,7 @@
 
       </div>
     </div>
-    <div id="modal-despesa" class="modal-despesa">
 
-      <div class="modal">
-        <h3 id="titulomd" class="titulomd"> DESPESAS</h3>
-        <table class="row" id="row">
-          <tr>
-            <button id="adiciona_despesa" onclick="abre_modal_despesa('I', 'modal-adcdesp')" class="botaoadicionar">ADICIONAR DESPESA</button>
-          </tr>
-
-        </table>
-        <table id="Valores">
-          <thead>
-            <th id="cabecario">ID</th>
-            <th id="cabecario">Descrição</th>
-            <th id="cabecario">Tipo</th>
-            <th id="cabecario">Valor</th>
-            <th id="cabecario">Data de Vencimento</th>
-            <th id="cabecario">Situação</th>
-            <th id="cabecario">Edita</th>
-            <th id="cabecario">Remove</th>
-          </thead>
-        <tbody id="conteudo_despesa" class="colunas"></tbody>
-        </table>
-    </div>
-        <button class="salvar-despesa" onclick="fecha_modal('modal-despesa')">CONCLUIDO</button>
-    </div>
-  </div>
-  <div id="modal-adcdesp" class="modal-container">
-      <div class="modal">
-        <h3 id="titulomd" class="titulomd"> Adicionar nova despesa</h3>
-        <form id="adic_desp"  method="POST">
-          <div id="modal-grid">
-            <table>
-              <tr>
-                <td id="formtd">
-                  <label for="descricaodesp" id="labeltd">Descrição</label>
-                  <input type="text" id="descricaodesp" name="descricaodesp">
-                </td>
-                <td id="formtd">
-                  <label for="tipodesp" id="labeltd">Tipo</label>
-                  <select id="tipodesp" name="tipodesp">
-                    <option value="luz">Luz </option>
-                    <option value="agua">Agua</option>
-                    <option value="internet">Internet</option>
-                    <option value="manutencao">Manutenção</option>
-                  </select>
-                </td>
-                <td id="formtd">
-                  <label for="vencimentodesp" id="labeltd">Data de Vencimento</label>
-                  <input type="date" id="vencimentodesp" name="vencimentodesp" >
-                </td>
-              </tr>
-              <tr>
-                <td id="formtd">
-                  <label for="valordesp" id="labeltd">Valor</label>
-                  <input type="number" id="valordesp" name="valordesp">
-                </td>
-                <td>
-                  <label for="statusdesp" id="labeltd">Situação</label>
-                  <select id="statusdesp" name="statusdesp">
-                    <option value="pago">Pago</option>
-                    <option value="naopago">Não Pago</option>
-                    <option value="processando">Processando</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </form>
-        <button class="fechar" onclick="fecha_modal('modal-adcdesp')">FECHAR</button>
-        <button type="button" class="salvar" id="salvar" onclick="salvar()">SALVAR UNIDADE</button>
-
-    </div>
-  </div>
-  <div id="modal-edi-desp" class="modal-container">
-
-    <div class="modal">
-      <h3 id="titulomd" class="titulomd"> Editar unidade</h3>
-      <form id="edi_desp"  method="POST">
-        <div id="modal-grid">
-          <table>
-            <tr>
-              <td id="formtd">
-                <label for="edi_descricaodesp" id="labeltd">Descrição</label>
-                <input type="text" id="edi_descricaodesp" name="edi_descricaodesp">
-              </td>
-              <td id="formtd">
-                <label for="edi_tipodesp" id="labeltd">Tipo</label>
-                <select id="edi_tipodesp" name="edi_tipodesp">
-                  <option value="luz">Luz </option>
-                  <option value="agua">Agua</option>
-                  <option value="internet">Internet</option>
-                  <option value="manutencao">Manutenção</option>
-                </select>
-              </td>
-              <td id="formtd">
-                <label for="edi_vencimentodesp" id="labeltd">Data de Vencimento</label>
-                <input type="date" id="edi_vencimentodesp" name="edi_vencimentodesp" >
-              </td>
-            </tr>
-            <tr>
-              <td id="formtd">
-                <label for="edi_valordesp" id="labeltd">Valor</label>
-                <input type="number" id="edi_valordesp" name="edi_valordesp">
-              </td>
-              <td>
-                <label for="edi_statusdesp" id="labeltd">Situação</label>
-                <select id="edi_statusdesp" name="edi_statusdesp">
-                  <option value="pago">Pago</option>
-                  <option value="naopago">Não Pago</option>
-                  <option value="processando">Processando</option>
-                </select>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </form>
-      <button class="fechar" onclick="fecha_modal('modal-edi-desp')">FECHAR</button>
-      <button type="button" class="salvar" id="salvar" onclick="salvar_edicao_despesa()">CONCLUIDO</button>
-
-  </div>
-</div>
 
   </body>
 

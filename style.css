@@ -1,3 +1,6 @@
+body{
+  background-color: #ff940e;
+}
 body,
 ul {
   margin: 0px;
@@ -253,4 +256,27 @@ justify-content: center;
 }
 #logo{
   width: 60px;
+}
+#botaofiltrar {
+    width: 100px;
+    left: 368px;
+    position: fixed;
+    top: 201px;
+    background-color: #6e84f3;
+    font-family: "Lato";
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+#inicio{
+      top: 15px;
+      left: 550px;
+      position: relative;
+      width: 248px;
+}
+#ini{
+  background: #6e84f3	;
+  color: black;
+  text-align: center;
+  padding: 15px;
+  border: 2px solid black;
 }
